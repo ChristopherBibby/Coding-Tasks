@@ -218,3 +218,6 @@ iso_forest_tuned.fit(df_scaled)
 iso_predictions_tuned = iso_forest_tuned.predict(df_scaled)
 iso_predictions_tuned = [0 if x == 1 else 1 for x in iso_predictions_tuned]
 df['iso_outlier_tuned'] = iso_predictions_tuned
+
+# Export the results to a CSV file
+df.to_csv('iso_forest_results.csv', index=False)
